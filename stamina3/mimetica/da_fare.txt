@@ -1,0 +1,5 @@
+quadrato più piccolo che deve perforare il cubo
+
+riprovare con cerchi e palle
+
+condizione iniziale su almeno due facce del cubo

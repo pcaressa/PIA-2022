@@ -1,0 +1,3220 @@
+%PDF-1.3
+%�쏢
+1 0 obj
+<</Type/Font/Subtype/Type1/Name/F1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>
+endobj
+2 0 obj
+<</Type/Font/Subtype/Type1/Name/F2/BaseFont/Helvetica-Bold/Encoding/WinAnsiEncoding>>
+endobj
+3 0 obj
+<</Type/Font/Subtype/Type1/Name/F3/BaseFont/Helvetica-Oblique/Encoding/WinAnsiEncoding>>
+endobj
+4 0 obj
+<</Type/Font/Subtype/Type1/Name/F4/BaseFont/Helvetica-BoldOblique/Encoding/WinAnsiEncoding>>
+endobj
+5 0 obj
+<</Length 6667>>
+stream
+BT 1 0 0 1 72 762 Tm
+/F1 11 Tf 0 0 0 rg 0 0.498 0 rg (% cell_nut_quim.m | Solves convection-diffusion-reaction equation using MOLE)Tj
+0 -13.2 TD
+T*
+0 0 0 rg (clc)Tj
+T*
+(close)Tj
+( )Tj
+(all)Tj
+T*
+(format)Tj
+( )Tj
+(short)Tj
+T*
+T*
+(addpath)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0.498 0 0.498 rg ('../mole_MATLAB')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (% Mimetic operator's parameters)Tj
+T*
+0 0 0 rg (k)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (m)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (101)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (n)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (101)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (o)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (101)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf 0 0.498 0 rg (% Domain's dimensions)Tj
+T*
+0 0 0 rg (a)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (b)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (101)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (c)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (d)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (101)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (e)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (f)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (101)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (% Spatial step sizes)Tj
+T*
+0 0 0 rg (dx)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+(\()Tj
+/F1 11 Tf (b)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf (a)Tj
+/F2 11 Tf (\)/)Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (;)Tj
+T*
+/F1 11 Tf (dy)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+(\()Tj
+/F1 11 Tf (d)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf (c)Tj
+/F2 11 Tf (\)/)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (;)Tj
+T*
+/F1 11 Tf (dz)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+(\()Tj
+/F1 11 Tf (f)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf (e)Tj
+/F2 11 Tf (\)/)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (;)Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (% Mimetic operators)Tj
+T*
+0 0 0 rg (D)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (div3D)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (k)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dy)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (\);)Tj
+T*
+/F1 11 Tf (G)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (grad3D)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (k)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dy)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (\);)Tj
+T*
+/F1 11 Tf (I)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (interpol3D)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf (L)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (lap3D)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (k)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dy)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (\);)Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (% Células vector)Tj
+T*
+0 0 0 rg (S)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (zeros)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf 0 0.498 0 rg (%Nutrientes vector)Tj
+T*
+0 0 0 rg (N)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (ones)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf 0 0.498 0 rg (%Quimiocina vector)Tj
+T*
+0 0 0 rg (Q)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.05)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf (ones)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (%Parámetros)Tj
+T*
+0 0 0 rg (smax)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (5)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor real 10^\(12\))Tj
+T*
+0 0 0 rg (qmax)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor real 10^\(6\))Tj
+T*
+0 0 0 rg (nmax)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor real 8*10^\(-2\))Tj
+T*
+T*
+(%Difusividad de stem cells)Tj
+T*
+0 0 0 rg (difs)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor real 2*10^\(-12\))Tj
+T*
+(%coeficiente de muerte celular)Tj
+T*
+0 0 0 rg (Rd)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (7)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor real 3*10^\(-7\))Tj
+T*
+(% parámetro de Frontera libre)Tj
+T*
+0 0 0 rg (lamb)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 10^\(-9\))Tj
+T*
+(%Parámetros de Q multipicado por CHI+)Tj
+T*
+0 0 0 rg (chi)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.008)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 8*10^\(-9\))Tj
+T*
+ET
+endstream
+endobj
+6 0 obj
+<</Length 14501>>
+stream
+BT 1 0 0 1 72 762 Tm
+/F1 11 Tf 0 0.498 0 rg (%Difusión de quimiocina)Tj
+0 -13.2 TD
+0 0 0 rg (Dq)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original5*10^\(-11\))Tj
+T*
+0 0 0 rg (Rsq)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (6)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 10^\(-12\))Tj
+T*
+0 0 0 rg (Rq)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (8)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 7*10^\(-5\))Tj
+T*
+0 0 0 rg (phi)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (6)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 1)Tj
+T*
+T*
+(%Parametros de Nutrientes)Tj
+T*
+0 0 0 rg (delta)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 10^\(-2\))Tj
+T*
+(%Difusión de nutriente)Tj
+T*
+0 0 0 rg (Dn)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor original 2*10^\(-11\))Tj
+T*
+(%K constante media de saturación de nutriente)Tj
+T*
+0 0 0 rg (k1)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.05)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Valor real 5*10^\(-2\))Tj
+T*
+(%proliferación)Tj
+T*
+0 0 0 rg (umax)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (10)Tj
+/F2 11 Tf 0 0 0 rg (^\(-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (5)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%tasa máxima de proliferación)Tj
+T*
+0 0 0 rg (theta)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.04)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%constante de función de Hill)Tj
+T*
+T*
+(% Impose initial conditions -----------------------------------------------)Tj
+T*
+(%S=0, N=1, Q=0.5)Tj
+T*
+(%Definición de núcleo necrótico)Tj
+T*
+0 0 0 rg (i0)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (floor)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (floor)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (floor)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+T*
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (floor)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (\)*)Tj
+/F1 11 Tf (ones)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%arreglo del indice p1)Tj
+T*
+(%Boundary conditions)Tj
+T*
+0 0 0 rg (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+( )Tj
+/F1 11 Tf (bc)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%células implantadas en A)Tj
+T*
+0 0 0 rg (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\)=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\(\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\)=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.7)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Dirichlet para Q en gamma)Tj
+T*
+0 0 0 rg (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\(\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\)=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Dirichlet para Q en gamma)Tj
+T*
+(%Condiciones de contorno externas de Neumann)Tj
+T*
+0 0 0 rg (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\)=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (%Condiciones de contorno internas de Neumann)Tj
+T*
+0 0 0 rg (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+T*
+/F1 11 Tf (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+/F1 11 Tf (N)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+T*
+/F1 11 Tf 0 0.498 0 rg (%velocity field)Tj
+ET
+endstream
+endobj
+7 0 obj
+<</Length 7865>>
+stream
+BT 1 0 0 1 72 762 Tm
+/F1 11 Tf 0 0.498 0 rg 0 0 0 rg (V)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (chi)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (qmax)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (G)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (;)Tj
+0 -13.2 TD
+/F1 11 Tf 0 0.498 0 rg (% dt based oAA=zeros\(o+2,1\);n von Neumann criterion)Tj
+T*
+0 0 0 rg (dt1)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (^)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (/\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (*)Tj
+/F1 11 Tf (difs)Tj
+/F2 11 Tf (\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf 0 0.498 0 rg (% dt based on CFL condition)Tj
+T*
+0 0 0 rg (dt2)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+(\()Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf (max)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (\)\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+/F1 11 Tf 0 0.498 0 rg (% Select minimum dt)Tj
+T*
+0 0 0 rg (dt)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (min)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (dt1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (dt2)Tj
+/F2 11 Tf (\);)Tj
+T*
+T*
+/F1 11 Tf (iters)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (3000)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+(  )Tj
+/F1 11 Tf 0 0.498 0 rg (% 90 = 30s  if dt = 0.3333 because CFL)Tj
+T*
+T*
+(%Premultiplicacion de operador para Sn)Tj
+T*
+0 0 0 rg (Ls)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (D)Tj
+/F2 11 Tf (*\(\()Tj
+/F1 11 Tf (difs)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (G)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+/F1 11 Tf (Ls)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Ls)Tj
+( )Tj
+/F2 11 Tf (-)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Rd)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (L)Tj
+/F2 11 Tf (\)\)+)Tj
+( )Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (L)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+/F1 11 Tf (DD)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+(  )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (D)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (spdiags)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (\),)Tj
+( )Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (\)\)*)Tj
+/F1 11 Tf (I)Tj
+/F2 11 Tf (;)Tj
+T*
+T*
+0 0 0.498 rg (for)Tj
+( )Tj
+/F1 11 Tf 0 0 0 rg (i)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+( )Tj
+/F2 11 Tf 0 0 0 rg (:)Tj
+( )Tj
+/F1 11 Tf (iters)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf 0 0.498 0.498 rg (3)Tj
+T*
+T*
+(    )Tj
+0 0.498 0 rg (% Solve diffusive term using FTCS scheme)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Ls)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (% Impose conditions)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (reshape)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%S\(i0:i1, j0:j1, p0:p1\)=0;)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+( )Tj
+/F1 11 Tf (bc)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+(   )Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (% Solve advective term using upwind scheme)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (S)Tj
+( )Tj
+/F2 11 Tf (-)Tj
+( )Tj
+/F1 11 Tf (DD)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (% Impose conditions)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (reshape)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%S\(i0:i1, j0:j1, p0:p1\)=0;)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+( )Tj
+/F1 11 Tf (bc)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Premultiplicación de operador para Sn+1)Tj
+T*
+(    )Tj
+0 0 0 rg (NN)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (./\()Tj
+/F1 11 Tf (k1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (Ms)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+(-)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (umax)Tj
+/F2 11 Tf (*\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (+)Tj
+/F1 11 Tf (k1)Tj
+/F2 11 Tf (\)*)Tj
+/F1 11 Tf (spdiags)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (NN)Tj
+/F2 11 Tf (.*\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (-)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\),)Tj
+( )Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (Ms)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\)\)+)Tj
+( )Tj
+/F1 11 Tf (Ms)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Solve system linear)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Ms)Tj
+/F2 11 Tf (\\)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Impose conditions)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (reshape)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%S\(i0:i1, j0:j1, p0:p1\)=0;)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+( )Tj
+/F1 11 Tf (bc)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Quimiocinas)Tj
+T*
+(    )Tj
+(%Q=reshape\(Q, m+2, n+2, o+2\);)Tj
+T*
+(    )Tj
+(%Q\(i0:i1, j0:j1, p0:p1\)=1;)Tj
+T*
+(    )Tj
+(%Q=Q\(:\);)Tj
+T*
+(    )Tj
+T*
+(    )Tj
+(%Premultiplication laplaciano de quimiocina)Tj
+T*
+(    )Tj
+0 0 0 rg (Lq)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Dq)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (L)Tj
+/F2 11 Tf (;)Tj
+ET
+endstream
+endobj
+8 0 obj
+<</Length 12680>>
+stream
+BT 1 0 0 1 72 762 Tm
+/F2 11 Tf 0 0 0 rg (    )Tj
+/F1 11 Tf (Lq)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Lq)Tj
+( )Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Lq)Tj
+/F2 11 Tf (\)\);)Tj
+0 -13.2 TD
+(    )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (Lq)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (;)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf (Mq)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Rq)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\)\)+)Tj
+/F1 11 Tf (Rsq)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (spdiags)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\),)Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%consumo de quimiocina)Tj
+T*
+(    )Tj
+0 0 0 rg (Q)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf (Mq)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Premultiplication laplaciano de nutriente)Tj
+T*
+(    )Tj
+0 0 0 rg (Ln)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Dn)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (L)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf (Ln)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Ln)Tj
+( )Tj
+/F2 11 Tf (+)Tj
+( )Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Ln)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Nutrientes)Tj
+T*
+(    )Tj
+0 0 0 rg (N)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Ln)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Premultiplicación de operador para Nn+1)Tj
+T*
+(    )Tj
+0 0 0 rg (Mn)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (.*)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (.*)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (.*)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (./\(\()Tj
+/F1 11 Tf (theta)Tj
+/F2 11 Tf (^)Tj
+/F1 11 Tf 0 0.498 0.498 rg (4)Tj
+/F2 11 Tf 0 0 0 rg (\)+\()Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (.*)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (.*)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (.*)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (Mn)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (spdiags)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Mn)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Mn)Tj
+/F2 11 Tf (\),)Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Mn)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (Mn)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Mn)Tj
+( )Tj
+/F2 11 Tf (+)Tj
+( )Tj
+/F1 11 Tf (speye)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (size)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Mn)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf (N)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (Mn)Tj
+/F2 11 Tf (\\)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (;)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (% Impose conditions)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (reshape)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (reshape)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Imponer condiciones para N)Tj
+T*
+(    )Tj
+0 0 0 rg (N)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (reshape)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+0 0 0.498 rg (for)Tj
+( )Tj
+/F1 11 Tf 0 0 0 rg (ii)Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+T*
+(        )Tj
+/F2 11 Tf 0 0 0.498 rg (for)Tj
+( )Tj
+/F1 11 Tf 0 0 0 rg (j)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+T*
+(            )Tj
+(gamma)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\);)Tj
+T*
+(            )Tj
+/F1 11 Tf (gamma)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (gamma)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (smax)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (lamb)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (difs)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\)/)Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%nuevo valor de la frontera libre)Tj
+T*
+(            )Tj
+/F2 11 Tf 0 0 0.498 rg (if)Tj
+( )Tj
+/F1 11 Tf 0 0 0 rg (gamma)Tj
+/F2 11 Tf (<=)Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)-\()Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(                )Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)=)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+(            )Tj
+0 0 0.498 rg (end)Tj
+T*
+T*
+(            )Tj
+/F1 11 Tf 0 0.498 0 rg (%Impose conditions)Tj
+T*
+(            )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+(            )Tj
+0 0 0.498 rg (if)Tj
+( )Tj
+/F1 11 Tf 0 0 0 rg (j)Tj
+/F2 11 Tf (<=)Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\(\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(                )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.7)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+(            )Tj
+0 0 0.498 rg (else)Tj
+T*
+(                )Tj
+/F1 11 Tf 0 0 0 rg (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+T*
+(            )Tj
+0 0 0.498 rg (end)Tj
+T*
+T*
+(            )Tj
+/F1 11 Tf 0 0 0 rg (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (;)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0 rg (%Cero nutrientes en nucleo necrotico)Tj
+T*
+(            )Tj
+(%Condicion de contorno interna de Neumann)Tj
+T*
+(            )Tj
+0 0 0 rg (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+T*
+(            )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(            )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(            )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+(            )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\);)Tj
+T*
+T*
+(            )Tj
+/F1 11 Tf 0 0.498 0 rg (%Condicion Neumann)Tj
+T*
+(            )Tj
+0 0 0 rg (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+( )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)+)Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (phi)Tj
+/F2 11 Tf (;)Tj
+T*
+(            )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+( )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)+)Tj
+/F1 11 Tf (dx)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (phi)Tj
+/F2 11 Tf (;)Tj
+T*
+(            )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)+)Tj
+/F1 11 Tf (dy)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (phi)Tj
+/F2 11 Tf (;)Tj
+ET
+endstream
+endobj
+9 0 obj
+<</Length 11445>>
+stream
+BT 1 0 0 1 72 762 Tm
+/F2 11 Tf 0 0 0 rg (            )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)=)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)+)Tj
+/F1 11 Tf (dy)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (phi)Tj
+/F2 11 Tf (;)Tj
+0 -13.2 TD
+T*
+(            )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (ptab)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (ii)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j)Tj
+/F2 11 Tf (\)\)+)Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (phi)Tj
+/F2 11 Tf (;)Tj
+T*
+T*
+(        )Tj
+0 0 0.498 rg (end)Tj
+T*
+(       )Tj
+T*
+(    )Tj
+(end)Tj
+T*
+(           )Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0 0 rg (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (-)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (p0)Tj
+/F2 11 Tf (\)+)Tj
+/F1 11 Tf (dz)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (phi)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Actualiza V)Tj
+T*
+(    )Tj
+0 0 0 rg (V)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (chi)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (qmax)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (G)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (Q)Tj
+/F2 11 Tf (;)Tj
+T*
+(    )Tj
+/F1 11 Tf (DD)Tj
+( )Tj
+/F2 11 Tf (=)Tj
+( )Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (D)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (spdiags)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf 0 0.498 0.498 rg (0)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (\),)Tj
+( )Tj
+/F1 11 Tf (numel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (V)Tj
+/F2 11 Tf (\)\)*)Tj
+/F1 11 Tf (I)Tj
+/F2 11 Tf (;)Tj
+T*
+(   )Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%Condiciones de contorno externas de Neumann)Tj
+T*
+(    )Tj
+0 0 0 rg (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\)=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+( )Tj
+(=)Tj
+( )Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf 0 0.498 0.498 rg (1)Tj
+/F2 11 Tf 0 0 0 rg (:\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+T*
+(   )Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf (pause)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0 0.498 0.498 rg (0.01)Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i0)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (i1)Tj
+/F2 11 Tf (,)Tj
+/F1 11 Tf (j1)Tj
+/F2 11 Tf (:)Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)=)Tj
+( )Tj
+/F1 11 Tf (bc)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (\);)Tj
+T*
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (% Plot cell profile)Tj
+T*
+(    )Tj
+0 0 0 rg (slice)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (n)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf (ceil)Tj
+/F2 11 Tf (\(\()Tj
+/F1 11 Tf (m)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\)/)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\),)Tj
+( )Tj
+/F1 11 Tf (o)Tj
+/F2 11 Tf (+)Tj
+/F1 11 Tf 0 0.498 0.498 rg (2)Tj
+/F2 11 Tf 0 0 0 rg (\);)Tj
+T*
+(    )Tj
+/F1 11 Tf (shading)Tj
+( )Tj
+(interp)Tj
+T*
+(    )Tj
+/F2 11 Tf 0 0 0.498 rg (set)Tj
+0 0 0 rg (\()Tj
+/F1 11 Tf (gca)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('XDir')Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('reverse')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+0 0 0.498 rg (set)Tj
+0 0 0 rg (\()Tj
+/F1 11 Tf (gca)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('ZDir')Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('reverse')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+0 0 0.498 rg (set)Tj
+0 0 0 rg (\()Tj
+/F1 11 Tf (gcf)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('color')Tj
+/F2 11 Tf 0 0 0 rg (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('w')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+/F1 11 Tf (xlabel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0.498 0 0.498 rg ('y')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+/F1 11 Tf (ylabel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0.498 0 0.498 rg ('x')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+/F1 11 Tf (zlabel)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf 0.498 0 0.498 rg ('z')Tj
+/F2 11 Tf 0 0 0 rg (\))Tj
+T*
+(    )Tj
+/F1 11 Tf (axis)Tj
+( )Tj
+(equal)Tj
+T*
+(    )Tj
+(title)Tj
+/F2 11 Tf (\([)Tj
+/F1 11 Tf 0.498 0 0.498 rg ('Cell concentration profile, t = ')Tj
+( )Tj
+0 0 0 rg (num2str)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (i)Tj
+/F2 11 Tf (*)Tj
+/F1 11 Tf (dt)Tj
+/F2 11 Tf (,)Tj
+( )Tj
+/F1 11 Tf 0.498 0 0.498 rg ('%2.2f')Tj
+/F2 11 Tf 0 0 0 rg (\)]\))Tj
+T*
+(    )Tj
+/F1 11 Tf (colorbar)Tj
+T*
+(    )Tj
+0 0.498 0 rg (%view\(90, 90\))Tj
+T*
+(    )Tj
+(%Plot quimiocinas)Tj
+T*
+(    )Tj
+(%Q1=reshape\(Q, m+2, n+2, o+2\);)Tj
+T*
+(    )Tj
+(%slice\(Q1, ceil\(n+2\)/2, ceil\(\(m+2\)/2\), o+2\);)Tj
+T*
+(    )Tj
+(%shading interp)Tj
+T*
+(    )Tj
+(%set\(gca, 'XDir', 'reverse'\))Tj
+T*
+(    )Tj
+(%set\(gca, 'ZDir', 'reverse'\))Tj
+T*
+(    )Tj
+(%set\(gcf, 'color', 'w'\))Tj
+T*
+(    )Tj
+(%xlabel\('y'\))Tj
+T*
+(    )Tj
+(%ylabel\('x'\))Tj
+T*
+(    )Tj
+(%zlabel\('z'\))Tj
+T*
+(    )Tj
+(%axis equal)Tj
+ET
+endstream
+endobj
+10 0 obj
+<</Length 885>>
+stream
+BT 1 0 0 1 72 762 Tm
+/F1 11 Tf 0 0.498 0 rg (    )Tj
+(%title\(['Chemoquine concentration profile, t = ' num2str\(i*dt, '%2.2f'\)]\))Tj
+0 -13.2 TD
+(    )Tj
+(%colorbar)Tj
+T*
+(    )Tj
+(%view\(90, 90\))Tj
+T*
+(    )Tj
+T*
+(    )Tj
+(%AA=zeros\(o+2,1\);)Tj
+T*
+(    )Tj
+(%for ii=1:o+2)Tj
+T*
+(     )Tj
+(%   AA\(ii\)=S\(ceil\(\(m+2\)/2\),ceil\(\(n+2\)/2\),ii\);)Tj
+T*
+(    )Tj
+(%end)Tj
+T*
+(    )Tj
+0 0 0 rg (S)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+(    )Tj
+/F1 11 Tf 0 0.498 0 rg (%if i==iters*3)Tj
+T*
+(     )Tj
+(%   S=reshape\(S,m+2,n+2,o+2\);)Tj
+T*
+(    )Tj
+(%end)Tj
+T*
+(    )Tj
+T*
+(   )Tj
+(% plot\(AA\);)Tj
+T*
+(   )Tj
+0 0 0 rg (N)Tj
+/F2 11 Tf (=)Tj
+/F1 11 Tf (N)Tj
+/F2 11 Tf (\(:\);)Tj
+T*
+T*
+0 0 0.498 rg (end)Tj
+T*
+T*
+/F1 11 Tf 0 0 0 rg (min)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\))Tj
+T*
+/F1 11 Tf (max)Tj
+/F2 11 Tf (\()Tj
+/F1 11 Tf (S)Tj
+/F2 11 Tf (\))Tj
+T*
+ET
+endstream
+endobj
+11 0 obj
+<</ProcSet[/PDF/Text]
+/Font<</F1 1 0 R/F2 2 0 R/F3 3 0 R/F4 4 0 R>> >>
+endobj
+12 0 obj
+<</Type/Page/Parent 18 0 R
+/MediaBox[ 0 0 595 842]
+/Contents 5 0 R
+/Resources 11 0 R
+>>
+endobj
+13 0 obj
+<</Type/Page/Parent 18 0 R
+/MediaBox[ 0 0 595 842]
+/Contents 6 0 R
+/Resources 11 0 R
+>>
+endobj
+14 0 obj
+<</Type/Page/Parent 18 0 R
+/MediaBox[ 0 0 595 842]
+/Contents 7 0 R
+/Resources 11 0 R
+>>
+endobj
+15 0 obj
+<</Type/Page/Parent 18 0 R
+/MediaBox[ 0 0 595 842]
+/Contents 8 0 R
+/Resources 11 0 R
+>>
+endobj
+16 0 obj
+<</Type/Page/Parent 18 0 R
+/MediaBox[ 0 0 595 842]
+/Contents 9 0 R
+/Resources 11 0 R
+>>
+endobj
+17 0 obj
+<</Type/Page/Parent 18 0 R
+/MediaBox[ 0 0 595 842]
+/Contents 10 0 R
+/Resources 11 0 R
+>>
+endobj
+18 0 obj
+<</Type/Pages/Kids[
+12 0 R
+13 0 R
+14 0 R
+15 0 R
+16 0 R
+17 0 R
+]/Count 6
+>>
+endobj
+19 0 obj
+<</Type/Catalog/Pages 18 0 R >>
+endobj
+xref
+0 20
+0000000000 65535 f 
+0000000015 00000 n 
+0000000111 00000 n 
+0000000212 00000 n 
+0000000316 00000 n 
+0000000424 00000 n 
+0000007141 00000 n 
+0000021693 00000 n 
+0000029608 00000 n 
+0000042339 00000 n 
+0000053835 00000 n 
+0000054770 00000 n 
+0000054857 00000 n 
+0000054961 00000 n 
+0000055065 00000 n 
+0000055169 00000 n 
+0000055273 00000 n 
+0000055377 00000 n 
+0000055482 00000 n 
+0000055573 00000 n 
+trailer
+<< /Size 20 /Root 19 0 R
+>>
+startxref
+55621
+%%EOF
